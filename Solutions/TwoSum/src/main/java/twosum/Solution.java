@@ -1,13 +1,14 @@
 package twosum;
 
+import java.util.HashMap;
+import java.util.Map;
+
 class Solution {
     public Solution() {}
 
     public int[] twoSum(int[] nums, int target) {
         for (int i = 0; i < nums.length; ++i) {
-            if (i > target) continue;
             for (int j = i + 1; j < nums.length; ++j) {
-                if (j > target) continue;
                 if (nums[i] + nums[j] == target) return new int[]{i, j};
             }
         }
@@ -15,17 +16,17 @@ class Solution {
     }
 
     public int[] twoSumOptimized(int[] nums, int target) {
-        int left = 0;
-        int right = nums.length - 1;
+        int[] result = new int[2];
 
-        while (left < nums.length) {
-            if (!(left == right) && nums[left] + nums[right] == target) return new int[]{left, right};
-            if (nums[left] + nums[right] > target) {
-                --right;
-            } else {
-                ++left;
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (map.containsKey(target - nums[i])) {
+                result[1] = i;
+                result[0] = map.get(target - nums[i]);
+                return result;
             }
+            map.put(nums[i], i);
         }
-        return new int[]{-1, -1};
+        return result;
     }
 }

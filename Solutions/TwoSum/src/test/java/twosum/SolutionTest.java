@@ -56,4 +56,12 @@ public class SolutionTest {
             assertTrue(true);
         }
     }
+
+    @Test
+    void myExampleOptimized() {
+        int[] result = solution.twoSumOptimized(new int[]{150,24,79,50,88,345,3}, 200);
+        if (Arrays.equals(result, new int[]{1,0}) || Arrays.equals(result, new int[]{0,1})) {
+            assertTrue(true);
+        }
+    }
 }
