@@ -1,3 +1,4 @@
 rootProject.name = 'Solutions'
 include 'TwoSum'
+include 'PalindromNumber'
 
