@@ -2,4 +2,5 @@ rootProject.name = 'Solutions'
 include 'TwoSum'
 include 'PalindromNumber'
 include 'RomanToInteger'
+include 'LongestCommonPrefix'
 
